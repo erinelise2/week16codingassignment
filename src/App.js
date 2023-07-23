@@ -3,14 +3,14 @@ import './App.css';
 
 import {
   BrowserRouter as Router,
-  Switch,
   Route,
+  Routes,
   Link,
 } from 'react-router-dom';
 
 import Home from './Components/Home.js';
 import About from './Components/About.js';
-import Observations from './Components/Observations.js'
+import Observations from './Components/Observations.js';
 
 export default function App() {
   return (
@@ -26,25 +26,17 @@ export default function App() {
               <Link to="/about">About</Link>
             </li>
             <li>
-              <Link to="/observations">Observations</Link>
+            <Link to="/observations">Observations</Link>
             </li>
           </ul>
         </nav>
-
-        <Switch>
-          <Route path="/observations">
-            <Projects/>
-          </Route>
-
-					<Route path="/about">
-            <About />
-          </Route>
-           
-					<Route path="/">
-            <Home />
-          </Route>
-          
-				</Switch>
+        <main>
+        <Routes>
+          <Route path="/observations" element={<Projects/>}/>
+          <Route path="/about" element={<About/>}/>
+          <Route path="/" element={<Home/>}/>  
+				</Routes>
+        </main>
       </div>
     </Router>
   );
