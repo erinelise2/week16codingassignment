@@ -5,34 +5,22 @@ import {
   BrowserRouter as Router,
   Route,
   Routes,
-  Link,
 } from 'react-router-dom';
 
-import Home from './Components/Home.js';
-import About from './Components/About.js';
-import Observations from './Components/Observations.js';
+import Home from './Pages/Home';
+import About from './Pages/About';
+import Observations from './Pages/Observations';
+import Navigation from './Components/Navigation';
 
 export default function App() {
   return (
 
     <Router>
+      <Navigation />
       <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-            <li>
-            <Link to="/observations">Observations</Link>
-            </li>
-          </ul>
-        </nav>
         <main>
         <Routes>
-          <Route path="/observations" element={<Projects/>}/>
+          <Route path="/observations" element={<Observations/>}/>
           <Route path="/about" element={<About/>}/>
           <Route path="/" element={<Home/>}/>  
 				</Routes>
@@ -40,4 +28,5 @@ export default function App() {
       </div>
     </Router>
   );
+  // import the new observation form to link to the observation page where there will be a field guide table connected to the update observation form?
 }

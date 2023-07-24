@@ -9,10 +9,12 @@ import App from './App';
 import './Index.css';
 
 ReactDOM.render(
+  <BrowserRouter>
   <React.StrictMode>
     <App />
   </React.StrictMode>,
   document.getElementById('root')
+  </BrowserRouter>
 );
 
 
